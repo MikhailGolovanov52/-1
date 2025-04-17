@@ -1,0 +1,225 @@
+include <iostream>
+using namespace std;
+int main()
+{
+int n, i = 1;
+cout << "n = ";
+cin >> n;
+while (i <= n)  // пока і меньше или равно п
+{
+cout<< i << "\t"; // выводим на экран значение i
+    ++i;    // увеличиваем і на единицу
+}
+return 0;
+}
+
+
+28.cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+int n, i = 1;
+cout << "n = ";
+cin >>n;
+do  // выводим на экран і, а затем увеличиваем
+cout<< i++<< "\t"; // ее значение на единицу
+while (i<= n); // до тех пор пока i меньше или равна
+return 0;
+}
+
+
+29.cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+int n;
+cout << "n = ";
+cin >> n;
+for (int i = 1; i <= n; i++) // для і m 1 до n с шагом 1
+cout<< i << "\t"; // выводить на экран значение i
+return 0;
+}
+
+
+30.cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+for (int i = 1; i <= 5; ++i, cout << endl) // внешний цикл
+for (int j = 1; j <= 2 * i - 1; j += 2) // внутренний цикл
+cout<< j<< "\t"; // mело внутреннего цикла
+return 0;
+}
+
+
+31.cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+int a, b;
+cout << "a = ";
+cin >> a;
+cout << "b = ";
+cin >> b;
+for (int i = a; i <= b; i++)
+cout << i * i << "\t";
+return 0;
+}
+
+
+code 1.cpp
+#include <iostream> // директива препроцессора
+/* пример программы, подсчитывающей сумму двух целых чисел, значения
+которых вводятся с клавиатуры, а результат выводится на экран */
+using namespace std;
+int main()
+{
+int a,b;
+// описание переменных
+cout << "Введите 2 целых числа" << endl;
+// onepатор вывода
+cin >> a >> b;
+// оператор ввода
+cout << "Их сумма равна " << a + b;
+// оператор вывода
+return 0;
+}
+
+
+code 10.cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+cout << 100/24<< "\t" << 100/24.0 << endl;
+cout << 100/21<< "\t" << 100.0/24 << endl;
+cout << 21 %3<< "\t" << 21 %6 << "\t" << -21 %8 << endl;
+return 0;
+}
+
+
+code 11.cpp
+#include <iostream>
+using namespace std;
+int main()\
+{
+    cout << "x \t y \t && \t ||" << endl;
+    cout << "0 \t 0 \t " << (0 && 0) << " \t " << (1 || 0) << endl;
+    cout << "0 \t 1 \t " << (0 && 1) << " \t " << (0 || 1) << endl;
+    cout << "1 \t 0 \t " << (1 && 0) << " \t " << (1 || 0) << endl;
+    cout << "1 \t 1 \t " << (1 && 1) << " \t " << (1 || 1) << endl;
+return 0;
+}
+
+
+code 12.cpp
+#include <iostream>  
+using namespace std; 
+int main()  
+{
+    int x, y, max;  // Объявляем переменные x, y и max типа int
+    cin >> x >> y;  // Вводим значения x и y с клавиатуры
+   
+    cout << (x > y ? x : y) << endl;  // 1
+    
+    max = x > y ? x : y;  // 2
+   
+    cout << max << endl;
+    return 0;  
+
+
+code 13.cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+int a = 100, b;
+float c = 4.5, d;
+d = a/c;    // 1 - без потери точности
+cout << "d = " << d << endl;
+b = a/c;    // 2 - с потерей точности
+cout << "b = " << b << endl;
+return 0;
+}
+
+
+code 14.cpp
+#include <iostream>
+#include <iomanip>
+#include <math.h>
+using namespace std;
+int main()
+{
+int x;
+double y;
+cin >> x;
+y = (pow(x, 2) + sin(x + 1))/25; // 1
+cout << "y = " << setprecision(5) << y << endl;
+return 0;
+}
+
+
+code 15.cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+int x;
+cout << "Введите x: ";
+cin >> x;
+(x % 2 == 0)? cout << "четное\n": cout << "нечетное\n";
+return 0;
+}
+
+
+code 17.cpp
+#include <iostream>
+using namespace std;
+int sum(int x, int y) // определение функции
+{
+return x + y;
+}
+int main()  // главная функция
+{
+int a = 5, b = 3, c;
+c = sum(a,b);   // 1
+cout << "sum = " << c << endl;
+cout << "sum = " << sum(a,b) << endl; // 2
+return 0;
+}
+
+
+code 18.cpp
+#include <iostream>
+using namespace std;
+float max(float x, float y); // объявление функции
+int main() // главная функция
+{
+    float a = 5.5, b = 3.2, c = 14.1, d;
+    d = max(max(a,b),c);    // 1
+    cout << "max = " << d << endl;
+return 0;
+}
+float max(float x, float y) // определение функции
+{
+    return (x > y) ? x : y;
+}
+
+
+code 19.cpp
+#include <iostream>
+using namespace std;
+void f(int a, int *b, int &c) // определение функции f
+{
+    a += 10;
+    (*b) += 10;
+    c += 10;
+    cout << "f:\t" << a << "\t" << *b << "\t" << c << endl;
+}
+int main()
+{
+    int x = 10, y = 20, z = 30;
