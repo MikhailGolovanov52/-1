@@ -1,0 +1,219 @@
+cout << "main:\t" << x << "\t" << y << "\t" << z << endl;
+    f(x, &y, z);    // вызов функции f
+    cout << "main:\t" << x << "\t" << y << "\t" << z << endl;
+    return 0;
+}
+
+
+code 2.cpp
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+double i = 12345.6789;
+cout << setprecision(3) << i << endl;
+cout << setprecision(6) << i << endl;
+cout << setprecision(9) << i << endl;
+return 0;
+}
+
+
+code 20.cpp
+#include <iostream>
+using namespace std;
+void f(int *b, int &c)
+{
+(*b) += 10; // 1
+c += 10;
+}
+int main()
+{
+int y = 20, z = 30;
+f(&y, z);   // 2
+cout << "main:\t" << y << "\t" << z << endl;
+return 0;
+}
+
+
+code 21.cpp
+#include <iostream>
+using namespace std;
+int a = 100, b = 20; // глобальные переменные а u b
+void f1(int a)
+{// локальная переменная а
+a += 10;    // 1
+cout << "f1:\t" << a << "\t" << ::a << endl; // 2
+}
+void f2 (int b) // локальная переменная b
+{
+b *= 2; // 3
+cout << "f2\t"<< b << "\t" << a << endl;    //4
+}
+int main()
+{
+cout << "main:\t" << a << "\t" << b << endl; // 5
+f1(a); f2(b);   // 6
+cout << "main:\t" << a << "\t" << b << endl; // 7
+return 0;
+}
+
+
+code 22.cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+int x;
+cin >> x;
+switch (x)
+{
+case 1: cout << "понедельник" ; break;
+case 2: cout << "Bторник"; break;
+case 3: cout << "сpеда"; break;
+case 4: cout << "четверг"; break;
+case 5: cout << "пятница"; break;
+case 6: cout << "суббота"; break;
+case 7: cout << "воскресенье"; break;
+default: cout << "вы ошиблись";
+}
+return 0;
+}
+
+
+code 23.cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+int x;
+cin >> x;
+switch (x)
+{
+case 1: case 2: case 3: case 4:
+case 5: cout << "рабочий день"; break;
+case 6: case 7: cout << "выходной"; break;
+default: cout << "вы ошиблись";
+}
+return 0;
+}
+
+
+code 24.cpp
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+float x,y;
+cout << "x = ";
+cin >> x;
+if (x < 0)  // проверяем условие первой ветви
+y = pow(pow(x, 3)+1, 2);
+else if (x < 1) // проверяем условие второй ветви
+y = 0;
+else y = fabs(x*x-5*x+1);
+cout << "f( " << x << ") = " << y;
+return 0;
+}
+
+
+code 25.cpp
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+float x, y; // Ввод координат точки
+    cout << "x = ";
+    cin >> x;
+    cout << "y = ";
+    cin >> y;
+    if (x * x + y * y < 100)  // Внутри области
+        cout << "Да";
+    else if (x * x + y * y > 100)  // Вне области
+        cout << "Нет";
+    else cout << "на границе";
+    return 0;
+}
+
+
+code 26.cpp
+#include <iostream>
+#include <cmath>
+using namespace std; 
+int main()
+{
+    float x, y;  // Объявление переменных x и y
+    cout << "x = ";
+    cin >> x;        // Ввод значения
+    cout << "y = ";
+    cin >> y;        // Ввод значения 
+    if (fabs(x) < 10 && fabs(y) < 5)  // Если точка внутри области 
+    {
+        cout << "Да";  // Вывод "Да", если точка внутри области
+    }
+    else if (fabs(x) > 10 || fabs(y) > 5)  // Если точка вне области
+    {
+        cout << "Нет";  // Вывод "Нет", если точка вне области
+    }
+    else  // Если точка на границе области
+    {
+        cout << "на границе";  // Вывод "на границе", если точка на границе
+    }
+    return 0;  // Завершение программы
+}
+
+
+code 3.cpp
+#include <iostream>  
+using namespace std; 
+
+int main()  
+{
+    double i = 12345.6789;  // Объявляем переменную типа double и присваиваем ей значение 12345.6789
+
+    // Выводим значение переменной i
+    cout << scientific << i << endl;
+
+    // Выводим значение переменной i
+    cout << fixed << i << endl;
+
+    return 0;  // Завершаем программу
+}
+
+
+code 4.cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+    double i = 10;
+    cout << i << endl;
+    cout << showpoint << i << endl;
+    return 0;
+}
+
+
+code 5.cpp
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    cout << "1." << setw(10) << "Ivanov" << endl;
+    cout << "2." << setw(10) << left << "Ivanov" << endl;
+
+    cout << "3." << setw(10) << right << "Ivanov" << endl;
+return 0;
+}
+
+
+code 6.cpp
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    cout << "1." << setw(10) << -23.4567 << endl;
