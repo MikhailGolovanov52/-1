@@ -1,0 +1,45 @@
+cout << "2." << setw(10) << setprecision(3) << -23.4567 << endl;
+    cout << "3." << setw(10) << internal << -23.4567 << endl;
+    return 0;
+}
+
+
+code 7.cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+    int x = 3, y = 4;
+    cout << ++x << "\t" << --y << endl;
+    cout << x++ << " \t" << y-- << endl;
+    cout << x << "\t" << y << endl;
+return 0;
+}
+
+
+code 8.cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+    int x = 3;
+    cout << sizeof (int) << endl;
+    cout << sizeof (x * 10) << endl;
+    cout << sizeof (x * 0.1) << endl;
+return 0;
+}
+
+
+code 9.cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+    int x = 3, y = 0;
+    bool f = false, v = true;
+    cout << -x << "\t" << !x << endl;
+    cout << -y << "\t" << !y << endl;
+    cout << f << "\t" << !f << endl;
+    cout << v<< "\t" << !v << endl;
+return 0;
+}
